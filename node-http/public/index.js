@@ -11,7 +11,8 @@ const server = http.createServer((req, res) => {
   
     if (req.method == 'GET') {
       var fileUrl;
-      if (req.url == '/') fileUrl = '/index.html';
+      if (req.url == '/') 
+      fileUrl = '/index.html';
       else fileUrl = req.url;
   
       var filePath = path.resolve('./public'+fileUrl);
