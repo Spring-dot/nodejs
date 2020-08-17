@@ -12,11 +12,13 @@ MongoClient.connect(url, (err, client) => {
 
     const db = client.db(dbname);
     const collection = db.collection("dishes");
-    collection.insertOne({"name": "Uthappizza", "description": "test"},
+    collection.insertOne({"name": "paneer-chilli", "description": "test"},
+    collection.insertOne({"name": "Sandwich", "description": "test2"}),
     (err, result) => {
         assert.equal(err,null);
 
         console.log("After Insert:\n");
+        console.log(result.ops);
         console.log(result.ops);
 
         collection.find({}).toArray((err, docs) => {
