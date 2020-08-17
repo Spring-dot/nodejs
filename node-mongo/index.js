@@ -19,7 +19,7 @@ MongoClient.connect(url, (err, client) => {
 
         console.log("After Insert:\n");
         console.log(result.ops);
-        console.log(result.ops);
+        
 
         collection.find({}).toArray((err, docs) => {
             assert.equal(err,null);
