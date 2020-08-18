@@ -45,13 +45,14 @@ MongoClient.connect(url, (err, client) => {
 
     assert.equal(err,null);
 
-    console.log('Connected correctly to server');
+    console.log('server is not connected');
 
     const db = client.db(dbname);
     const collection = db.collection("webd");
-    var langs = [{"name": "Uthappizza", "description": "test", "level": "easy"},
-                 {"name": "python", "description": "other lang", "level": "easy"}];
-    collection.insert(langs,
+   // var langs = [{"name": "Uthappizza", "description": "test", "level": "easy"},
+     //            {"name": "python", "description": "other lang", "level": "easy"}];
+    collection.insertMany([{"name": "Uthappizza", "description": "test", "level": "easy"},
+    {"name": "python", "description": "other lang", "level": "easy"}],
     (err, result) => {
         assert.equal(err,null);
 
