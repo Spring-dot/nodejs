@@ -49,7 +49,9 @@ MongoClient.connect(url, (err, client) => {
 
     const db = client.db(dbname);
     const collection = db.collection("webd");
-    collection.insertMany({"name": "Uthappizza", "description": "test", "level": "easy"}, {"name": "python", "description": "other lang", "level": "easy"},
+    var langs = [{"name": "Uthappizza", "description": "test", "level": "easy"},
+                 {"name": "python", "description": "other lang", "level": "easy"}];
+    collection.insert(langs,
     (err, result) => {
         assert.equal(err,null);
 
