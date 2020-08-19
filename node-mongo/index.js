@@ -11,7 +11,7 @@ MongoClient.connect(url, (err, client) => {
 
     console.log('Server connected successfully');
 
-    const db = client.db(language);
+    const db = client.db("conFusion");
     const collection = db.collection("dishes");
  
     dboper.insertDocument(db, { name: "Vadonut", description: "Test"},
